@@ -73,10 +73,20 @@ var registeredCompressor = make(map[string]Compressor)
 // registered with the same name, the one registered last will take effect.
 func RegisterCompressor(c Compressor) {
 	registeredCompressor[c.Name()] = c
+	
+	for _, m := range registeredCompressor {
+
+    // m is a map[string]interface.
+    // loop over keys and values in the map.
+    for k, v := range m {
+        fmt.Println(k, " value is ", v)
+    }
+}
 }
 
 // GetCompressor returns Compressor for the given compressor name.
 func GetCompressor(name string) Compressor {
+	fmt.Println("name is ", name)
 	return registeredCompressor[name]
 }
 
