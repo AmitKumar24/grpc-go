@@ -1,4 +1,4 @@
-module google.golang.org/grpc
+module github.com/AmitKumar24/grpc-go
 
 go 1.11
 
